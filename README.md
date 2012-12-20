@@ -9,9 +9,9 @@ Zer behar du proiektuak??
 -
 - Datu basea
   - Erabiltzaileak (id, pass)
-  - Bezeroak (id, izena, kantitatea, eguna?, prezioa_osorik?)
+  - Bezeroak (id, izena, kantitatea, eguna)
   - Produktua (*id_Bezeroa, mota, prezioa)
-  - Eguna (zenbakia, id_bezero?)
+  - Eguna (zenbakia)
     
 - PHP programak MVC:
   - Datu baserako konexioa
