@@ -1,0 +1,38 @@
+/* 
+    Document   : estiloa
+    Created on : Dec 21, 2012, 9:46:54 AM
+    Author     : Gerkoon Diseinuak
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+body{
+   /* background: bat jarri behar zaio;*/
+}
+
+/* div-ak zentratuta*/
+
+#indexForm{
+    margin: 100px auto;
+    width: 400px;
+}
+
+label{
+    display: block;
+    
+}
+
+input{
+    margin-bottom: 30px;
+    width: 250px;
+}
+
+.botoia{
+    display: block;
+    margin-left: 120px;
+    width: 135px;
+}
