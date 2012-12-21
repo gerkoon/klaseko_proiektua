@@ -16,6 +16,11 @@ body{
 
 /* div-ak zentratuta*/
 
+#content{
+    height: 1000px;
+    overflow: hidden;
+}
+
 #osoa{
     box-shadow: 0 0 32px #E0D01A;
     margin: 100px auto;
@@ -44,4 +49,29 @@ input{
     display: block;
     margin-left: 120px;
     width: 135px;
+}
+
+/* ---------------------- FOOTER ----------------------*/
+
+footer{
+    background: #666666;
+    height: 1000px;
+    
+}
+
+#f_garapena{
+    margin: auto;
+    width: 850px;
+    padding-top: 55px;
+}
+
+footer h2{
+    display:block;
+    width: 163px;
+    height: 35px;
+    text-indent: -9999px;
+}
+
+h2#garapena{
+    background: url("irudiak/garapena.png") no-repeat top left;
 }
