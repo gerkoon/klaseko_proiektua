@@ -59,19 +59,53 @@ footer{
     
 }
 
-#f_garapena{
+#f{
     margin: auto;
-    width: 850px;
+    width: 605px;
+}
+
+#f_garapena, #f_partehartze{
+    float: left;
     padding-top: 55px;
+    width: 300px;
 }
 
 footer h2{
     display:block;
-    width: 163px;
     height: 35px;
     text-indent: -9999px;
 }
 
+footer h3{
+    display: block;
+    height: 100px;
+    margin-left: 85px;
+    margin-top: 25px;
+    text-indent: -9999px;
+    
+}
+
 h2#garapena{
-    background: url("irudiak/garapena.png") no-repeat top left;
+    background: url("/irudiak/garapena.png") no-repeat top left;
+    width: 163px;
+}
+
+h2#partehartze{
+    background: url("irudiak/partehartze.png") no-repeat top left;
+    width: 190px;
+}
+
+h3#gerkoon{
+    background: url("irudiak/gerkoon.png") no-repeat top left;
+    width: 100px;
+}
+
+h3#zornotza{
+    background: url("irudiak/zornotza.png") no-repeat top left;
+    width: 205px;
+}
+
+h3#lorak{
+    background: url("irudiak/lorak.png") no-repeat top left;
+    width: 205px;
 }
