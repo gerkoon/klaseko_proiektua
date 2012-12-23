@@ -70,6 +70,10 @@ footer{
     width: 300px;
 }
 
+/*#f_garapena{
+    background: url();
+}*/
+
 footer h2{
     display:block;
     height: 35px;
@@ -86,7 +90,7 @@ footer h3{
 }
 
 h2#garapena{
-    background: url("/irudiak/garapena.png") no-repeat top left;
+    background: url("irudiak/garapena.png") no-repeat top left;
     width: 163px;
 }
 
@@ -107,5 +111,20 @@ h3#zornotza{
 
 h3#lorak{
     background: url("irudiak/lorak.png") no-repeat top left;
+    width: 205px;
+}
+
+h3#gerkoon:hover{
+    background: url("irudiak/gerkoon_hover.png") no-repeat top left;
+    width: 100px;
+}
+
+h3#zornotza:hover{
+    background: url("irudiak/zornotza_hover.png") no-repeat top left;
+    width: 205px;
+}
+
+h3#lorak:hover{
+    background: url("irudiak/lorak_hover.png") no-repeat top left;
     width: 205px;
 }
