@@ -90,41 +90,41 @@ footer h3{
 }
 
 h2#garapena{
-    background: url("irudiak/garapena.png") no-repeat top left;
+    background: url("../irudiak/garapena.png") no-repeat top left;
     width: 163px;
 }
 
 h2#partehartze{
-    background: url("irudiak/partehartze.png") no-repeat top left;
+    background: url("../irudiak/partehartze.png") no-repeat top left;
     width: 190px;
 }
 
 h3#gerkoon{
-    background: url("irudiak/gerkoon.png") no-repeat top left;
+    background: url("../irudiak/gerkoon.png") no-repeat top left;
     width: 100px;
 }
 
 h3#zornotza{
-    background: url("irudiak/zornotza.png") no-repeat top left;
+    background: url("../irudiak/zornotza.png") no-repeat top left;
     width: 205px;
 }
 
 h3#lorak{
-    background: url("irudiak/lorak.png") no-repeat top left;
+    background: url("../irudiak/lorak.png") no-repeat top left;
     width: 205px;
 }
 
 h3#gerkoon:hover{
-    background: url("irudiak/gerkoon_hover.png") no-repeat top left;
+    background: url("../irudiak/gerkoon_hover.png") no-repeat top left;
     width: 100px;
 }
 
 h3#zornotza:hover{
-    background: url("irudiak/zornotza_hover.png") no-repeat top left;
+    background: url("../irudiak/zornotza_hover.png") no-repeat top left;
     width: 205px;
 }
 
 h3#lorak:hover{
-    background: url("irudiak/lorak_hover.png") no-repeat top left;
+    background: url("../irudiak/lorak_hover.png") no-repeat top left;
     width: 205px;
 }
