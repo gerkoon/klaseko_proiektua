@@ -1,1 +1,0 @@
-Datu baseko konfigurazioa aldatzeko: cli-config artxiboan
