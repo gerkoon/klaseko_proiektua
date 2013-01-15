@@ -13,17 +13,17 @@
  */
 
 /** @entity 
-* @Table(name="taulaproba_PPPPP") 
+* @Table(name="bezeroa") 
  * 
  */
-class datuSartu {
+class bezeroa {
     /** @Column(type="integer") 
      * @id
      * @GeneratedValue(strategy="AUTO")
      */
     private $id; // mapea el campo id en la base de datos de tipo int
     
-    /** @Column(length=50) */
+    /** @Column(type="string", length=50) */
     private $izena; // tipo por defecto string
     
     public function __construct($i,$iz){

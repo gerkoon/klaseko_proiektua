@@ -28,9 +28,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 
                 <label>Pasahitza</label>
                 <input type="password" name="pass" required="" />
-                
-                
-                <label>Datu Basea</label>
+                                
+                <label>Loradenda</label>
                 <input type="text" name="ddbb" required="" />
                 
                 <input class="botoia" type="submit" name="bidali" />
