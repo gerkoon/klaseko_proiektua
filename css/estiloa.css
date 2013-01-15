@@ -17,7 +17,15 @@ body{
 /* div-ak zentratuta*/
 
 #header{
-    background: #666;
+    background: url("../irudiak/HeaderBackground.png") repeat-x top left;
+    height: 40px;
+}
+
+#header h1{
+    text-indent: -9999px;
+    height: 40px;
+    width: 134px;
+    background: url("../irudiak/logo.png") no-repeat top left;
 }
 
 #content{
