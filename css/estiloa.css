@@ -16,6 +16,10 @@ body{
 
 /* div-ak zentratuta*/
 
+#header{
+    background: #666;
+}
+
 #content{
     height: 1000px;
     overflow: hidden;
