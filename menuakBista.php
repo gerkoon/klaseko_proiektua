@@ -16,9 +16,9 @@ class bistak {
     } 
 
     public function bistaratuMenua($m) {
-        echo "<li>";
+        echo "<li><a href='#'>";
         echo $m;
-        echo "</li>";
+        echo "</a></li>";
     }
     
     public function menuaBukatu() {

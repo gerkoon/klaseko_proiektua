@@ -29,12 +29,26 @@ body{
     float:left;
 }
 
+#menu ul{
+    float: right;
+    margin-right: 20px;
+    height: 40px;
+}
+
 #menu ul li{
     display: block;
-    float: right;
-    color: #ffffff;
-    margin-top: 4px;
+    float: left;
+    font-size: 0.9em;
+    height: 27px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 13px;
+    text-transform: uppercase;
+
 }
+#menu ul li a{
+    color: #CCCCCC;
+ }
 
 /*----------------------------  CONTENT  ------------------------------------*/
 
@@ -128,12 +142,12 @@ h3#gerkoon{
 
 h3#zornotza{
     background: url("../irudiak/zornotza.png") no-repeat top left;
-    width: 205px;
+    width: 100px;
 }
 
 h3#lorak{
     background: url("../irudiak/lorak.png") no-repeat top left;
-    width: 205px;
+    width: 100px;
 }
 
 h3#gerkoon:hover{
@@ -143,10 +157,10 @@ h3#gerkoon:hover{
 
 h3#zornotza:hover{
     background: url("../irudiak/zornotza_hover.png") no-repeat top left;
-    width: 205px;
+    width: 100px;
 }
 
 h3#lorak:hover{
     background: url("../irudiak/lorak_hover.png") no-repeat top left;
-    width: 205px;
+    width: 100px;
 }
