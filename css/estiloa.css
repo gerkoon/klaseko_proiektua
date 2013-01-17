@@ -44,9 +44,15 @@ body{
     padding-right: 10px;
     padding-top: 13px;
     text-transform: uppercase;
+    background: url("../irudiak/menuSeparator.png") repeat-y top right;
 
 }
 #menu ul li a{
+    color: #CCCCCC;
+ }
+ 
+ #menu ul li:hover{
+    background:  url("../irudiak/HeaderBackgroundHover.png") repeat-x top left;
     color: #CCCCCC;
  }
 
