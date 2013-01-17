@@ -26,7 +26,17 @@ body{
     height: 40px;
     width: 134px;
     background: url("../irudiak/logo.png") no-repeat top left;
+    float:left;
 }
+
+#menu ul li{
+    display: block;
+    float: right;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+/*----------------------------  CONTENT  ------------------------------------*/
 
 #content{
     height: 1000px;

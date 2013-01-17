@@ -7,7 +7,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
 <!DOCTYPE html>
 <html>
     <head>
-        <title>XXX aplikazioaren sarbidea</title>
+        <title>DomuTeka aplikazioaren sarbidea</title>
         <link rel="stylesheet" href="css/estiloa.css" type="text/css">
         <link rel="stylesheet" href="css/reset.css" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
