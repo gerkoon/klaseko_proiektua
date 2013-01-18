@@ -10,6 +10,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
         <title>DomuTeka aplikazioa</title>
         <link rel="stylesheet" href="css/estiloa.css" type="text/css">
         <link rel="stylesheet" href="css/reset.css" type="text/css">
+        <script src="js/jquery.js" language="javascript" type="text/javascript"></script>
+        <script src="js/erakutsi.js" language="javascript" type="text/javascript"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
@@ -19,7 +21,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             <?php
                 include_once 'menua.php';
                 include_once 'menuakBista.php';
-                #include_once 'ikusiBista.php';
+                include_once 'appBistak.php';
                 #include_once 'menuakBista.php';
                 
                 $m=new menua();
@@ -39,12 +41,20 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 
             <?php
             
-            
-            
+            $app=new appBistak();
+            $x="hola";
+            $j=34;
             #error_reporting(0);
                 switch ($_GET['lot']) {
                   
-                case 0: echo "decoracion/Deco01.jpg";
+                case 0: $app->ikusi1Hasi();
+                        $app->ikusiLista($x);
+                        $app->ikusi1Bukatu();
+                        
+                        $app->ikusi2Hasi();
+                        $app->zenbakia($j);
+                        $app->ikusi2Bukatu();
+                        
                       break;
                 case 1: echo "Flores/Flores01.jpg";
                       break;

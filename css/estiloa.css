@@ -84,12 +84,16 @@ body{
     width: 255px;
 }
 
+#bigarrena{
+    display:none;
+}
+
 label{
     display: block;
     width: 250px;
 }
 
-input{
+input, select{
     margin-bottom: 30px;
     width: 250px;
 }
@@ -98,6 +102,9 @@ input{
     display: block;
     margin-left: 120px;
     width: 135px;
+}
+.barrua{
+    padding: 40px;
 }
 
 /* ---------------------- FOOTER ----------------------*/
