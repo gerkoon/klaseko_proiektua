@@ -19,3 +19,7 @@ Zer behar du proiektuak??
   - Modifikaziorako pantaila
   - Altetarako pantaila
 - Hasierako HTML / CSS txiki bat
+
+
+- Bistak programa:
+    - bista bakar bat (menuak $lot itzultzena funtzioa soilik aldatzeko).

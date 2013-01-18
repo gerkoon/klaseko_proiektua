@@ -7,7 +7,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
 <!DOCTYPE html>
 <html>
     <head>
-        <title>DomuTeka aplikazioaren sarbidea</title>
+        <title>DomuTeka aplikazioa</title>
         <link rel="stylesheet" href="css/estiloa.css" type="text/css">
         <link rel="stylesheet" href="css/reset.css" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,6 +19,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             <?php
                 include_once 'menua.php';
                 include_once 'menuakBista.php';
+                #include_once 'ikusiBista.php';
+                #include_once 'menuakBista.php';
                 
                 $m=new menua();
                 $mb=new bistak();
@@ -36,6 +38,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
         <aside id="osoa2">
                 
             <?php
+            
+            
             
             #error_reporting(0);
                 switch ($_GET['lot']) {
