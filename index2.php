@@ -25,11 +25,76 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 
                 $mb->menuaHasi();
                 for ($i = 0; $i < $m->getCount(); $i++) {
-                    $mb->bistaratuMenua($m->getElementuak($i));
+                    $mb->bistaratuMenua($m->getElementuak($i),$i);
                 }
                 $mb->menuaBukatu();
             ?>
         </div>
         
+        <div id="content">
+            
+        <aside id="osoa2">
+                
+            <?php
+            
+            #error_reporting(0);
+                switch ($_GET['lot']) {
+                  
+                case 0: echo "decoracion/Deco01.jpg";
+                      break;
+                case 1: echo "Flores/Flores01.jpg";
+                      break;
+                case 2: echo "decoracion/Deco02.jpg";
+                      break;
+                case 3: echo "Flores/Flores02.jpg";
+                      break;
+                
+                default: echo "home/Nodisponible.jpg";
+        break;
+}
+            ?>
+                
+        </aside>    
+            
+        
+        <footer>
+            <div id="f">
+            <div id="f_garapena">
+                <h2 id="garapena">
+                garapena:
+                </h2>
+                
+                <a href="http://www.be.net/gerkoon">
+                    <h3 id="gerkoon">
+                    gerkoon diseinuak
+                    </h3>
+                </a>
+                
+            </div>
+            
+            <div id="f_partehartze">
+                <h2 id="partehartze">
+                Parte hartzea:
+                </h2>
+                
+                <a href="http://www.fpzornotza.hezkuntza.net/web/guest">
+                    <h3 id="zornotza">
+                    FP Zornotza
+                    </h3>
+                </a>
+                
+                <a href="http://lorak.bermeon-berton.com/">
+                    <h3 id="lorak">
+                    Lorak loradenda
+                    </h3>
+                </a>
+                
+            </div>
+            </div>
+        </footer>
+        </div>
+    </body>
+</html>
+
     </body>
 </html>

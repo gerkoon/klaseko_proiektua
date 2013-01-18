@@ -15,8 +15,8 @@ class bistak {
         echo "<div id='menu'><ul>";
     } 
 
-    public function bistaratuMenua($m) {
-        echo "<li><a href='#'>";
+    public function bistaratuMenua($m,$i) {
+        echo "<li><a href='index2.php?lot=".$i."'>";
         echo $m;
         echo "</a></li>";
     }

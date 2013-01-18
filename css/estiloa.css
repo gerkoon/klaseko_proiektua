@@ -71,6 +71,13 @@ body{
     width: 400px;
 }
 
+#osoa2{
+    box-shadow: 0 0 32px #E0D01A;
+    margin: 100px auto;
+    padding: 1px;
+    width: 750px;
+}
+
 #indexForm{
     margin: 100px auto;
     text-align: left;
