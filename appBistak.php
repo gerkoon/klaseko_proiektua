@@ -39,10 +39,24 @@ class appBistak {
         
     }
     
-    public function zenbakia($x) {
-               echo "<label>Zenbakia</label>
-                    <input readonly value='".$x."'>";
+    public function input($balorea,$izena) {
+               echo "<label>".$izena."</label>
+                    <input readonly value='".$balorea."'>";
                 
+    }
+    
+    public function textareaHasi($izena) {
+               echo "<label>".$izena."</label>
+                    <textarea readonly >";
+                
+    }
+    
+    public function textareaDatuak($datua){
+        echo $datua;
+    }
+    
+    public function textareaBukatu(){
+        echo "</textarea>";
     }
 
 }

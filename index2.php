@@ -52,7 +52,17 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->ikusi1Bukatu();
                         
                         $app->ikusi2Hasi();
-                        $app->zenbakia($j);
+                        $app->input($j, "Zenbakia");
+                        $app->input($j, "Eguna");
+                        $app->textareaHasi("Enkargatua");
+                        /* for bat juen bide hamen*/
+                        $app->textareaDatuak("bat");
+                        $app->textareaDatuak("bi");
+                        $app->textareaDatuak("bat");
+                        $app->textareaDatuak("bi");
+                        /* honarte */
+                        $app->textareaBukatu();
+                        $app->input($j, "Prezioa");
                         $app->ikusi2Bukatu();
                         
                       break;
