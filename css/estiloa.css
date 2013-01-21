@@ -76,6 +76,7 @@ body{
     margin: 100px auto;
     padding: 1px;
     width: 750px;
+    overflow: auto;
 }
 
 #indexForm{
@@ -93,7 +94,7 @@ label{
     width: 250px;
 }
 
-input, select{
+input, select, textarea{
     margin-bottom: 30px;
     width: 250px;
 }
@@ -105,6 +106,7 @@ input, select{
 }
 .barrua{
     padding: 40px;
+    float:left;
 }
 
 /* ---------------------- FOOTER ----------------------*/
