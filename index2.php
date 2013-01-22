@@ -19,7 +19,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
         <div id="header">
             <h1>DomuTeka</h1>
             <?php
-                include_once 'menua.php';
+                include_once 'lib/model/entities/menua.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
                 #include_once 'menuakBista.php';
