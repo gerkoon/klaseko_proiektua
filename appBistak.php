@@ -52,7 +52,8 @@ class appBistak {
     }
     
     public function textareaDatuak($datua){
-        echo $datua;
+        $era=$datua."\n ";
+        echo $era;
     }
     
     public function textareaBukatu(){
