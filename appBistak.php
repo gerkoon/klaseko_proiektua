@@ -13,6 +13,7 @@
 class appBistak {
     public function ikusi1Hasi(){
         echo "<article class='barrua'>
+                
                 <select>";
         
     }

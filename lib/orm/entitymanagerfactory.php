@@ -38,7 +38,7 @@ public static function sartuDatuak($db,$er,$pa) {
 *
 * @return Doctrine\ORM\EntityManager
 */
-public static function createEntityManager() {
+public static function createEntityManager($db,$er,$pa) {
 
 if (self::$em == null) { 
 
@@ -70,9 +70,11 @@ $config->setProxyNamespace('proxies');
 $connectionOptions = array(
 'driver' => 'pdo_mysql',
 'host' => 'localhost',
-'dbname' => $daba,
-'user' => $us,
-'password' => $pss
+'dbname' =>$db,
+'user' => $er,
+'password' => $pa
+    
+    
 );
 
 //Pase 8: Creacion EntityManager

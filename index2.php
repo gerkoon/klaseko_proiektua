@@ -19,10 +19,17 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
         <div id="header">
             <h1>DomuTeka</h1>
             <?php
+                session_start();
                 include_once 'lib/model/entities/menua.php';
+                include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
                 #include_once 'menuakBista.php';
+                $izena=$_SESSION["izena"];
+                $pass=$_SESSION["pass"];
+                $ddbb=$_SESSION["izena"];
+
+                $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
                 $m=new menua();
                 $mb=new bistak();
