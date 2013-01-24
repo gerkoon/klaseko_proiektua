@@ -6,15 +6,9 @@ $izena=$_POST["izena"];
 $pass=$_POST["pass"];
 $ddbb=$_POST["izena"];
 
-$connectionOptions = array(
-	'driver' => 'pdo_mysql',
-	'host' => 'localhost',
-	'dbname' => $ddbb,
-	'user' => $izena,
-	'password' => $pass
-	);
+$sartu = new entityManagerFactory();
 
-$em=EntityManagerFactory::createEntityManager();
-$em
+$sartu->sartuDatuak($ddbb,$izena,$pass);
+$sartu->createEntityManager();
 
 ?>

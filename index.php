@@ -22,7 +22,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             
         <aside id="osoa">
         <div id="indexForm">
-            <form method="post" action="">
+            <form method="post" action="konexioa.php">
                 <label>Izena</label>
                 <input type="text" name="izena" required="" />
                 

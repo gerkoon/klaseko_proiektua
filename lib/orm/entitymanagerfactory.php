@@ -24,7 +24,16 @@ class EntityManagerFactory {
 * @var Doctrine\ORM\EntityManager
 */
 private static $em;
+private $daba;
+private $us;
+private $pss;
 
+
+public static function sartuDatuak($db,$er,$pa) {
+    $this->daba=$db;
+    $this->us=$er;
+    $this->pss=$pa;
+}
 /**
 *
 * @return Doctrine\ORM\EntityManager
@@ -61,9 +70,9 @@ $config->setProxyNamespace('proxies');
 $connectionOptions = array(
 'driver' => 'pdo_mysql',
 'host' => 'localhost',
-'dbname' => 'maranona',
-'user' => 'maranona',
-'password' => 'password'
+'dbname' => $daba,
+'user' => $us,
+'password' => $pss
 );
 
 //Pase 8: Creacion EntityManager
