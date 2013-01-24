@@ -99,6 +99,10 @@ input, select, textarea{
     width: 250px;
 }
 
+textarea{
+    height: 130px;
+}
+
 .botoia{
     display: block;
     margin-left: 120px;
