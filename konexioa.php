@@ -5,11 +5,11 @@ include_once 'lib/orm/EntityManagerFactory.php';
 
 $izena=$_POST["izena"];
 $pass=$_POST["pass"];
-$ddbb=$_POST["izena"];
+$ddbb=$_POST["ddbb"];
 
 $_SESSION["izena"]=$izena;
 $_SESSION["pass"]=$pass;
-$_SESSION["izena"]=$ddbb;
+$_SESSION["ddbb"]=$ddbb;
 
 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
 

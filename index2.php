@@ -27,7 +27,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
-                $ddbb=$_SESSION["izena"];
+                $ddbb=$_SESSION["ddbb"];
 
                 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
