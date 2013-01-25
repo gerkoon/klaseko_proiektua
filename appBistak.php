@@ -12,13 +12,11 @@
  */
 class appBistak {
     public function ikusi1Hasi(){
-        echo "<article class='barrua'>
-                
-                <select>";
+        echo "<select>";
         
     }
     
-    public function ikusiLista($x) {
+    public function listaOption($x) {
             echo "<option value='".$x."'>$x";
 
 }
@@ -26,8 +24,8 @@ class appBistak {
     public function ikusi1Bukatu() {
 
         echo "</select>
-                    <input type='button' class='botoia' id='ikusiBotoia' value='ikusi'>
-            </article>";
+                    <input type='button' class='botoia' id='ikusiBotoia' value='ikusi'>"
+            ;
 }
 
     public function ikusi2Hasi(){
