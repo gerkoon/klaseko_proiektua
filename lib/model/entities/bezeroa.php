@@ -18,6 +18,7 @@ class bezeroa {
    /** @Column(type="string") **/
     private $izena;
     
+    
     /**@OneToMany (tergetEntity="zentrua", mappedBy="id_bezero")*/
     private $zentruak;
     public function __construct($id,$iz){
