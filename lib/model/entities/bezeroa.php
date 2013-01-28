@@ -4,14 +4,14 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+namespace entities;
 /**
  * Description of bezeroa
  *
  * @author ikasle
  */
 
-/**@entity **/
+/** @Entity  @Table(name="bezeroa")**/
 class bezeroa {
    /** @Id @GeneratedValue @Column(type="integer") **/
    private $id;

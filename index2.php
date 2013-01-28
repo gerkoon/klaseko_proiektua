@@ -20,6 +20,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             <h1>DomuTeka</h1>
             <?php
                 session_start();
+                
                 include_once 'lib/model/entities/menua.php';
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
@@ -51,8 +52,10 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             $app=new appBistak();
             $x="hola";
             $j=34;
-            $sartu.getR
-            #error_reporting(0);
+            
+            echo $x;
+            
+            error_reporting(0);
                 switch ($_GET['lot']) {
                   
                 case 0: $app->ikusi1Hasi();

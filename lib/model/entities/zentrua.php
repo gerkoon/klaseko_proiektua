@@ -4,13 +4,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+namespace entities;
 /**
  * Description of zentrua
  *
  * @author ikasle
  */
-/** @entity*/
+/** @Entity  @Table(name="zentrua") */
 class zentrua {
     /** @Id @GeneratedValue(strategy="AUTO") @Column(type="integer") **/
     private $id;

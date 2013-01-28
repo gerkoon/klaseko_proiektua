@@ -10,8 +10,8 @@
  *
  * @author ikasle
  */
-
-/** @Entity **/
+namespace entities;
+/** @Entity @Table(name="eguna") **/
 class eguna {
     /** @Id @Column(type="integer") **/
     private $eguna;
