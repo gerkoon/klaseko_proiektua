@@ -20,6 +20,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             <h1>DomuTeka</h1>
             <?php
                 session_start();
+                
                 include_once 'lib/model/entities/menua.php';
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
@@ -45,18 +46,20 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
         <div id="content">
             
         <aside id="osoa2">
-                <article class='barrua'>
+                
             <?php
             
             $app=new appBistak();
             $x="hola";
             $j=34;
-            error_reporting(0);
             
+            echo $x;
+            
+            error_reporting(0);
                 switch ($_GET['lot']) {
                   
                 case 0: $app->ikusi1Hasi();
-                        $app->listaOption($x);
+                        $app->ikusiLista($x);
                         $app->ikusi1Bukatu();
                         
                         $app->ikusi2Hasi();
@@ -74,9 +77,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->ikusi2Bukatu();
                         
                       break;
-                case 1: $app->input($j, "Izena");
-                        #lista hastea falta da!!!!!!!!!!!!!!!!!!! AL LORO!!!!!!!!!!!!!!!!!!
-                        $app->listaOption(31);
+                case 1: echo "Flores/Flores01.jpg";
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
                       break;
@@ -86,9 +87,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 default: echo "home/Nodisponible.jpg";
         break;
 }
-           
             ?>
-        </article>  
+                
         </aside>    
             
         
