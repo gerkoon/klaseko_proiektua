@@ -33,6 +33,21 @@ class zentrua {
     
     /** @Column(type="boolean")**/
     private $ordainduta;
+
+    
+    public function __construct($desk,$id_b,$eguna){
+        $this->deskribapena=$desk;
+        $this->id_bezero=$id_b;
+        $this->eguna=$eguna;
+        $this->ordainduta=false;
+        
+    }
+    
+    public function setPrezioa($p) {
+        $this->prezioa=$p;
+    }
 }
+
+    
 
 ?>

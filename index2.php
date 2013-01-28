@@ -51,6 +51,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             $app=new appBistak();
             $x="hola";
             $j=34;
+            $sartu.getR
             #error_reporting(0);
                 switch ($_GET['lot']) {
                   

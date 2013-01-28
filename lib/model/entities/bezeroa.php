@@ -30,6 +30,14 @@ class bezeroa {
     public function setZentrua($z){
         $this->zentruak[]=$z;
     }
+    
+    public function getId(){
+        return $this->id;
+    }
+    
+    public function getIzena(){
+        return $this->izena;
+    }
 }
 
     
