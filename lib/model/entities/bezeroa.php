@@ -4,19 +4,20 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+namespace entities;
 /**
  * Description of bezeroa
  *
  * @author ikasle
  */
 
-/**@entity **/
+/** @Entity  @Table(name="bezeroa")**/
 class bezeroa {
    /** @Id @GeneratedValue @Column(type="integer") **/
    private $id;
    /** @Column(type="string") **/
     private $izena;
+    
     
     /**@OneToMany (tergetEntity="zentrua", mappedBy="id_bezero")*/
     private $zentruak;
@@ -29,6 +30,14 @@ class bezeroa {
     
     public function setZentrua($z){
         $this->zentruak[]=$z;
+    }
+    
+    public function getId(){
+        return $this->id;
+    }
+    
+    public function getIzena(){
+        return $this->izena;
     }
 }
 
