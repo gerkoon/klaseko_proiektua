@@ -4,13 +4,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+namespace entities;
 /**
  * Description of zentrua
  *
  * @author ikasle
  */
-/** @entity*/
+/** @Entity  @Table(name="zentrua") */
 class zentrua {
     /** @Id @GeneratedValue(strategy="AUTO") @Column(type="integer") **/
     private $id;
@@ -33,6 +33,21 @@ class zentrua {
     
     /** @Column(type="boolean")**/
     private $ordainduta;
+
+    
+    public function __construct($desk,$id_b,$eguna){
+        $this->deskribapena=$desk;
+        $this->id_bezero=$id_b;
+        $this->eguna=$eguna;
+        $this->ordainduta=false;
+        
+    }
+    
+    public function setPrezioa($p) {
+        $this->prezioa=$p;
+    }
 }
+
+    
 
 ?>
