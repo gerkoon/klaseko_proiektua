@@ -12,7 +12,7 @@ $_SESSION["pass"]=$pass;
 $_SESSION["ddbb"]=$ddbb;
 
 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
-#error_reporting(0);
+error_reporting(0);
 try {
                 $sartu->getRepository('entities\eguna')->findAll();
                 } catch (Exception $exc) {
@@ -20,5 +20,5 @@ try {
                 }
 require_once "index2.php";
 
-session_destroy();
+
 ?>
