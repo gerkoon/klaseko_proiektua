@@ -13,7 +13,7 @@
 class appBistak {
     public function ikusi1Hasi(){
         echo "<article class='barrua'>
-                <form method='post' action='index2.php'>
+                <form method='post' action='#'>
                 <select id='bezIzen' name=''bezIzen>";
         
     }

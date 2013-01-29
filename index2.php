@@ -66,7 +66,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         }
                         
                         $app->ikusi1Bukatu();
-                        $app->formularioaBukatu();
+                        $app->formBukatu();
                         #Bezeroaren eguna
                         $app->ikusi2Hasi();
                         $app->input($bIzen ->getId(), "Zenbakia");
