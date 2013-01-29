@@ -50,16 +50,20 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             <?php
             
             $app=new appBistak();
-            $x="hola";
+            $x= $sartu->getRepository('entities\bezeroa')->findAll();
             $j=34;
             
-            echo $x;
+            
             
             error_reporting(0);
                 switch ($_GET['lot']) {
                   
                 case 0: $app->ikusi1Hasi();
-                        $app->ikusiLista($x);
+                        for ($k=0;$k<count($x);$k++){
+                            $bIzen=$x[$k];
+                            $app->ikusiLista($bIzen ->getIzena());
+                        }
+                        
                         $app->ikusi1Bukatu();
                         
                         $app->ikusi2Hasi();
