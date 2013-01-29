@@ -18,6 +18,11 @@ class bezeroa {
    /** @Column(type="string") **/
     private $izena;
     
+    /** @ManyToOne(targetEntity="eguna", inversedBy="zentruak")
+     * @JoinColumn(name="eguna", referencedColumnName="eguna")
+     */
+    private $eguna;
+    
     
     /**@OneToMany (tergetEntity="zentrua", mappedBy="id_bezero")*/
     private $zentruak;
@@ -38,6 +43,10 @@ class bezeroa {
     
     public function getIzena(){
         return $this->izena;
+    }
+    
+    public function getEguna(){
+        return $this->eguna;
     }
 }
 

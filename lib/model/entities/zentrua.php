@@ -26,10 +26,7 @@ class zentrua {
      */
     private $id_bezero;
     
-    /** @ManyToOne(targetEntity="eguna", inversedBy="zentruak")
-     * @JoinColumn(name="eguna", referencedColumnName="eguna")
-     */
-    private $eguna;
+    
     
     /** @Column(type="boolean")**/
     private $ordainduta;

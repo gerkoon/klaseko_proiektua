@@ -87,6 +87,7 @@ body{
 
 #bigarrena{
     display:none;
+    float: right;
 }
 
 label{

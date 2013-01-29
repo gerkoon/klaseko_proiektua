@@ -13,8 +13,8 @@
 class appBistak {
     public function ikusi1Hasi(){
         echo "<article class='barrua'>
-                
-                <select>";
+                <form method='post' action='index2.php'>
+                <select id='bezIzen' name=''bezIzen>";
         
     }
     
@@ -26,7 +26,7 @@ class appBistak {
     public function ikusi1Bukatu() {
 
         echo "</select>
-                    <input type='button' class='botoia' id='ikusiBotoia' value='ikusi'>
+                    <input type='submit' class='botoia' id='ikusiBotoia' value='ikusi'>
             </article>";
 }
 
@@ -38,6 +38,10 @@ class appBistak {
     public function ikusi2Bukatu(){
         echo "</article>";
         
+    }
+    
+    public function formBukatu(){
+        echo "</form>";
     }
     
     public function input($balorea,$izena) {

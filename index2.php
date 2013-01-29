@@ -29,7 +29,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
-
+                #$aukIzen=$_POST['bezIzen'];
                 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
                 $m=new menua();
@@ -50,8 +50,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             <?php
             
             $app=new appBistak();
-            $x= $sartu->getRepository('entities\bezeroa')->findAll();
-            $j=34;
+            
+            
             
             
             
@@ -59,26 +59,29 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 switch ($_GET['lot']) {
                   
                 case 0: $app->ikusi1Hasi();
+                        $x= $sartu->getRepository('entities\bezeroa')->findAll();#bezeroa
                         for ($k=0;$k<count($x);$k++){
                             $bIzen=$x[$k];
                             $app->ikusiLista($bIzen ->getIzena());
                         }
                         
                         $app->ikusi1Bukatu();
-                        
+                        $app->formularioaBukatu();
+                        #Bezeroaren eguna
                         $app->ikusi2Hasi();
-                        $app->input($j, "Zenbakia");
-                        $app->input($j, "Eguna");
+                        $app->input($bIzen ->getId(), "Zenbakia");
+                        $app->input($bIzen ->getEguna()->getEguna(), "Eguna");
                         $app->textareaHasi("Enkargatua");
                         /* for bat juen bide hamen*/
-                        $app->textareaDatuak("bat");
+                        $app->textareaDatuak($aukIzen);
                         $app->textareaDatuak("bi");
                         $app->textareaDatuak("bat");
                         $app->textareaDatuak("bi");
                         /* honarte */
                         $app->textareaBukatu();
-                        $app->input($j, "Prezioa");
+                        $app->input(31, "Prezioa");
                         $app->ikusi2Bukatu();
+                        
                         
                       break;
                 case 1: echo "Flores/Flores01.jpg";
