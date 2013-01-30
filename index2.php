@@ -52,7 +52,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             $app=new appBistak();
             
             
-            if (isset($_GET)){
+            if (isset($_GET['lot'])){
             $zein=$_GET['lot'];
             }
             error_reporting(0);
@@ -62,7 +62,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $x= $sartu->getRepository('entities\bezeroa')->findAll();#bezeroa
                         for ($k=0;$k<count($x);$k++){
                             $bIzen=$x[$k];
-                            $app->ikusiLista($k,$bIzen ->getIzena());
+                            $app->ikusiLista($bIzen ->getId(),$bIzen ->getIzena());
                         }
                         
                         $app->ikusi1Bukatu();
@@ -70,11 +70,12 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         #Bezeroaren eguna
                         
                         $aukIzen=$_GET['bezIzen'];
-//                        echo "$aukIzen";
-                        $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id'=>"0"));
+//                       echo "$aukIzen";
+                        $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
                         $app->ikusi2Hasi();
-                        $app->input($x[$aukIzen]->getId(), "Zenbakia");
-                        $app->input($x[$aukIzen]->getEguna()->getEguna(), "Eguna");
+                        $app->input($y->getId(), "Zenbakia");
+                        $app->input($y->getIzena(), "Izena");
+                        $app->input($y->getEguna()->getEguna(), "Eguna");
                         $app->textareaHasi("Enkargatua");
                         /* for bat juen bide hamen*/
                         $app->textareaDatuak("$aukIzen");
