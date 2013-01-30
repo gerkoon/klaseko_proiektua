@@ -29,7 +29,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
-                #$aukIzen=$_POST['bezIzen'];
+                
                 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
                 $m=new menua();
@@ -52,28 +52,32 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             $app=new appBistak();
             
             
-            
-            
-            
+            if (isset($_GET)){
+            $zein=$_GET['lot'];
+            }
             error_reporting(0);
-                switch ($_GET['lot']) {
+                switch ($zein) {
                   
                 case 0: $app->ikusi1Hasi();
                         $x= $sartu->getRepository('entities\bezeroa')->findAll();#bezeroa
                         for ($k=0;$k<count($x);$k++){
                             $bIzen=$x[$k];
-                            $app->ikusiLista($bIzen ->getIzena());
+                            $app->ikusiLista($k,$bIzen ->getIzena());
                         }
                         
                         $app->ikusi1Bukatu();
                         $app->formBukatu();
                         #Bezeroaren eguna
+                        
+                        $aukIzen=$_GET['bezIzen'];
+//                        echo "$aukIzen";
+                        $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id'=>"0"));
                         $app->ikusi2Hasi();
-                        $app->input($bIzen ->getId(), "Zenbakia");
-                        $app->input($bIzen ->getEguna()->getEguna(), "Eguna");
+                        $app->input($x[$aukIzen]->getId(), "Zenbakia");
+                        $app->input($x[$aukIzen]->getEguna()->getEguna(), "Eguna");
                         $app->textareaHasi("Enkargatua");
                         /* for bat juen bide hamen*/
-                        $app->textareaDatuak($aukIzen);
+                        $app->textareaDatuak("$aukIzen");
                         $app->textareaDatuak("bi");
                         $app->textareaDatuak("bat");
                         $app->textareaDatuak("bi");
@@ -81,7 +85,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->textareaBukatu();
                         $app->input(31, "Prezioa");
                         $app->ikusi2Bukatu();
-                        
+
                         
                       break;
                 case 1: echo "Flores/Flores01.jpg";
@@ -90,7 +94,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                       break;
                 case 3: echo "Flores/Flores02.jpg";
                       break;
-                
+                case 4:
+                    break;
                 default: echo "home/Nodisponible.jpg";
         break;
 }

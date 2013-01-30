@@ -13,20 +13,23 @@
 class appBistak {
     public function ikusi1Hasi(){
         echo "<article class='barrua'>
-                <form method='post' action='#'>
-                <select id='bezIzen' name=''bezIzen>";
+                <form id='ikusiForm'>
+                <select id='bezIzen' name='bezIzen'>";
         
     }
     
-    public function ikusiLista($x) {
-            echo "<option value='".$x."'>$x";
+    public function ikusiLista($z,$x) {
+            echo "<option name='$z' id='$z' value='".$z."'>$x";
 
 }
                             
     public function ikusi1Bukatu() {
-
+        $i=4;
         echo "</select>
-                    <input type='submit' class='botoia' id='ikusiBotoia' value='ikusi'>
+                    <a href='index2.php?lot=".$i."'>
+                    <button type='submit' class='botoia' id='ikusiBotoia' value='ikusi'>
+                    ikusi
+                    </button></a>
             </article>";
 }
 
