@@ -58,7 +58,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             error_reporting(0);
                 switch ($zein) {
                   
-                case 0: $app->ikusi1Hasi();
+                case 0: $app->barrua();
+                        $app->ikusi1Hasi();
                         $x= $sartu->getRepository('entities\bezeroa')->findAll();#bezeroa
                         for ($k=0;$k<count($x);$k++){
                             $bIzen=$x[$k];
@@ -72,6 +73,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $aukIzen=$_GET['bezIzen'];
 //                       echo "$aukIzen";
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
+                        
                         $app->ikusi2Hasi();
                         $app->input($y->getId(), "Zenbakia");
                         $app->input($y->getIzena(), "Izena");
