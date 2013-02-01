@@ -94,7 +94,10 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 case 1: $app->barrua();
                         $app->formHasi("altaForm","#");
                         $app->inputHuts("Izena");
-                        echo "<label>hola</label>";
+                        
+                        #Eguna##########
+                        
+                        $app->label("Eguna");
                         $app->select("egAlta");
                         $x= $sartu->getRepository('entities\eguna')->findAll();#bezeroa
                         
@@ -103,6 +106,19 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             $app->option($bEgun ->getEguna(),$bEgun ->getEguna());
                         }
                         $app->selectBukatu();
+                        
+                        #zenbat zentru?
+                        
+                        $app->label("Zenbat zentru?");
+                        $app->select("zenAlta");
+                                                
+                        for ($k=1;$k<10;$k++){
+                            
+                            $app->option($k,$k);
+                        }
+                        $app->selectBukatu();
+                        
+                        
                         $app->formBukatu();
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
