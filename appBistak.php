@@ -21,10 +21,18 @@ class appBistak {
         
     }
     
-    public function ikusiLista($z,$x) {
-            echo "<option name='$z' id='$z' value='".$z."'>$x";
+    public function option($valorea,$agertu) {
+            echo "<option name='$valorea' id='$valorea' value='".$valorea."'>$agertu</option>";
 
 }
+    
+    public function select($id){
+        echo "<select id='$id' name='$id'>";
+    }
+    
+    public function selectBukatu(){
+        echo "</select>";
+    }
                             
     public function ikusi1Bukatu() {
         $i=4;
@@ -41,7 +49,7 @@ class appBistak {
         
     }
     
-    public function ikusi2Bukatu(){
+    public function articleBukatu(){
         echo "</article>";
         
     }
@@ -78,6 +86,10 @@ class appBistak {
     
     public function textareaBukatu(){
         echo "</textarea>";
+    }
+    
+    public function label($izena) {
+        echo "<label>".$izena."</label>";
     }
 
 }

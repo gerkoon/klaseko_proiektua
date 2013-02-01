@@ -63,7 +63,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $x= $sartu->getRepository('entities\bezeroa')->findAll();#bezeroa
                         for ($k=0;$k<count($x);$k++){
                             $bIzen=$x[$k];
-                            $app->ikusiLista($bIzen ->getId(),$bIzen ->getIzena());
+                            $app->option($bIzen ->getId(),$bIzen ->getIzena());
                         }
                         
                         $app->ikusi1Bukatu();
@@ -87,13 +87,22 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         /* honarte */
                         $app->textareaBukatu();
                         $app->input(31, "Prezioa");
-                        $app->ikusi2Bukatu();
+                        $app->articleBukatu();
 
                         
                       break;
                 case 1: $app->barrua();
                         $app->formHasi("altaForm","#");
                         $app->inputHuts("Izena");
+                        echo "<label>hola</label>";
+                        $app->select("egAlta");
+                        $x= $sartu->getRepository('entities\eguna')->findAll();#bezeroa
+                        
+                        for ($k=0;$k<count($x);$k++){
+                            $bEgun=$x[$k];
+                            $app->option($bEgun ->getEguna(),$bEgun ->getEguna());
+                        }
+                        $app->selectBukatu();
                         $app->formBukatu();
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
