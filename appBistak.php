@@ -53,6 +53,12 @@ class appBistak {
                 
     }
     
+    public function inputHutsik($izena) {
+               echo "<label>".$izena."</label>
+                    <input name='$izena'>";
+                
+    }
+    
     public function textareaHasi($izena) {
                echo "<label>".$izena."</label>
                     <textarea readonly >";
