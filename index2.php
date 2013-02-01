@@ -89,7 +89,10 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
 
                         
                       break;
-                case 1: echo "Flores/Flores01.jpg";
+                case 1: $app->barrua();
+                        $app->formHasi("altaForm","#");
+                        $app->inputHuts("Izena");
+                        $app->formBukatu();
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
                       break;
