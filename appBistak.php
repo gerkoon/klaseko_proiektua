@@ -11,9 +11,12 @@
  * @author Admin
  */
 class appBistak {
+    public function barrua(){
+        echo "<article class='barrua'>";
+    }
+    
     public function ikusi1Hasi(){
-        echo "<article class='barrua'>
-                <form id='ikusiForm'>
+        echo "<form id='ikusiForm'>
                 <select id='bezIzen' name='bezIzen'>";
         
     }
@@ -43,6 +46,10 @@ class appBistak {
         
     }
     
+    public function formHasi($id, $akzioa){
+        echo "<form id='$id' action='$akzioa'>";
+    }
+    
     public function formBukatu(){
         echo "</form>";
     }
@@ -52,8 +59,7 @@ class appBistak {
                     <input readonly value='".$balorea."'>";
                 
     }
-    
-    public function inputHutsik($izena) {
+    public function inputHuts($izena) {
                echo "<label>".$izena."</label>
                     <input name='$izena'>";
                 
