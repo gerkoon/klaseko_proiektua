@@ -11,17 +11,28 @@
  * @author Admin
  */
 class appBistak {
+    public function barrua(){
+        echo "<article class='barrua'>";
+    }
+    
     public function ikusi1Hasi(){
-        echo "<article class='barrua'>
-                <form id='ikusiForm'>
+        echo "<form id='ikusiForm'>
                 <select id='bezIzen' name='bezIzen'>";
         
     }
     
-    public function ikusiLista($z,$x) {
-            echo "<option name='$z' id='$z' value='".$z."'>$x";
+    public function option($valorea,$agertu) {
+            echo "<option name='$valorea' id='$valorea' value='".$valorea."'>$agertu</option>";
 
 }
+    
+    public function select($id){
+        echo "<select id='$id' name='$id'>";
+    }
+    
+    public function selectBukatu(){
+        echo "</select>";
+    }
                             
     public function ikusi1Bukatu() {
         $i=4;
@@ -38,9 +49,13 @@ class appBistak {
         
     }
     
-    public function ikusi2Bukatu(){
+    public function articleBukatu(){
         echo "</article>";
         
+    }
+    
+    public function formHasi($id, $akzioa){
+        echo "<form id='$id' action='$akzioa'>";
     }
     
     public function formBukatu(){
@@ -50,6 +65,11 @@ class appBistak {
     public function input($balorea,$izena) {
                echo "<label>".$izena."</label>
                     <input readonly value='".$balorea."'>";
+                
+    }
+    public function inputHuts($izena) {
+               echo "<label>".$izena."</label>
+                    <input name='$izena'>";
                 
     }
     
@@ -66,6 +86,10 @@ class appBistak {
     
     public function textareaBukatu(){
         echo "</textarea>";
+    }
+    
+    public function label($izena) {
+        echo "<label>".$izena."</label>";
     }
 
 }
