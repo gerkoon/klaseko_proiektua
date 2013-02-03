@@ -29,7 +29,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
-                
+                $_SESSION["id"];
                 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
                 $m=new menua();
@@ -70,7 +70,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         #Bezeroaren eguna
                         
                         $aukIzen=$_GET['bezIzen'];
-//                       echo "$aukIzen";
+                        $_SESSION["id"]=$aukIzen;
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
                         $app->ikusi2Hasi();
                         $app->input($y->getId(), "Zenbakia");
@@ -89,7 +89,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
 
                         
                       break;
-                case 1: echo "Flores/Flores01.jpg";
+                case 1: echo $_SESSION["id"];
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
                       break;

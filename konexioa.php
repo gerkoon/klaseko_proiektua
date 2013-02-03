@@ -18,7 +18,7 @@ try {
                 } catch (Exception $exc) {
                 require_once "index.php";
                 }
-require_once "index2.php";
+header( 'Location: index2.php' ) ; 
 
 
 ?>
