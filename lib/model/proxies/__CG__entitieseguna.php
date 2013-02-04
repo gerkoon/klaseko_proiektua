@@ -48,10 +48,10 @@ class eguna extends \entities\eguna implements \Doctrine\ORM\Proxy\Proxy
         return parent::getEguna();
     }
 
-    public function setZentrua($z)
+    public function setBezeroak($z)
     {
         $this->__load();
-        return parent::setZentrua($z);
+        return parent::setBezeroak($z);
     }
 
 

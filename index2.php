@@ -53,10 +53,10 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             
             
             if (isset($_GET['lot'])){
-            $zein=$_GET['lot'];
+            $_SESSION['zein']=$_GET['lot'];
             }
-            error_reporting(0);
-                switch ($zein) {
+            #error_reporting(0);
+                switch ($_SESSION['zein']) {
                   
                 case 0: $app->barrua();
                         $app->ikusi1Hasi();
@@ -117,9 +117,19 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             $app->option($k,$k);
                         }
                         $app->selectBukatu();
-                        
-                        
+                                             
                         $app->formBukatu();
+                        
+                        $app->button("Alta hasi","get","altaForm","#");
+                        
+                        if($_GET['Izena']!=""){
+                            
+                            $e=$sartu->getRepository('entities\eguna')->findOneBy(array('eguna' => $_GET['egAlta']));
+                            
+                            $bez=new entities\bezeroa($_GET['Izena'],$e);
+                            $sartu->persist($bez);
+                            $sartu->flush();
+                        }
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
                       break;

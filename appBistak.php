@@ -91,6 +91,10 @@ class appBistak {
     public function label($izena) {
         echo "<label>".$izena."</label>";
     }
+    
+    public function button($testua,$met,$form,$act){
+        echo "<button type='submit' form='$form' formaction='$act' formmethod='$met'>".$testua."</button>";
+    }
 
 }
 
