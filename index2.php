@@ -30,6 +30,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
                 $_SESSION["id"];
+                $_SESSION["zenbat"];
                 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
                 $m=new menua();
@@ -74,7 +75,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $_SESSION["id"]=$aukIzen;
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
                         
-                        $app->ikusi2Hasi();
+                        $app->articleBigarrena();
                         $app->input($y->getId(), "Zenbakia");
                         $app->input($y->getIzena(), "Izena");
                         $app->input($y->getEguna()->getEguna(), "Eguna");
@@ -120,16 +121,46 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                              
                         $app->formBukatu();
                         
-                        $app->button("Alta hasi","get","altaForm","#");
+                        $app->button("Alta hasi","get","altaForm","#","altaHasi");
                         
+                        
+                        #zentruak sartu!!!!!!!!!!!!!!!!!!!!!!!!!!
                         if($_GET['Izena']!=""){
-                            
+                            $_SESSION["id"]=$_GET['Izena'];
+                            $_SESSION["zenbat"]=$_GET['zenAlta'];
                             $e=$sartu->getRepository('entities\eguna')->findOneBy(array('eguna' => $_GET['egAlta']));
                             
                             $bez=new entities\bezeroa($_GET['Izena'],$e);
                             $sartu->persist($bez);
                             $sartu->flush();
+                            
+                            $app->articleBukatu();
+                            
+                            $app->articleBigarrena();
+                            
+                            $app->formHasi("formZentruAlta", "get");
+                                                       
+                            for($z=0;$z<$_GET['zenAlta'];$z++){
+                                $zz= $z+1;
+                                $app->textareaHasiDesk("$zz. zentrua","d$z");
+                                $app->textareaBukatu();
+                                
+                                
+                            }
+                            $app->button("Zentruen deskribapena sartu","get","formZentruAlta","#","ZentruSartu");
+                            $app->formBukatu();
+                            $app->articleBukatu();
                         }
+                            if(isset($_GET['ZentruSartu'])){
+                                $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["id"]));
+                                for($j=0;$j<$_SESSION["zenbat"];$j++){
+                                    $desk="d".$j;
+                                    $zen=new entities\zentrua($_GET[$desk],$norentzat);
+                                    $sartu->persist($zen);
+                                    $sartu->flush();
+                                }
+                            }
+                        
                       break;
                 case 2: echo "decoracion/Deco02.jpg";
                       break;

@@ -10,7 +10,7 @@ $ddbb=$_POST["ddbb"];
 $_SESSION["izena"]=$izena;
 $_SESSION["pass"]=$pass;
 $_SESSION["ddbb"]=$ddbb;
-
+$_SESSION['zein']=0;
 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
 error_reporting(0);
 try {

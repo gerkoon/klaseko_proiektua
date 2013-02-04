@@ -32,16 +32,19 @@ class zentrua {
     private $ordainduta;
 
     
-    public function __construct($desk,$id_b,$eguna){
+    public function __construct($desk,$id_b){
         $this->deskribapena=$desk;
         $this->id_bezero=$id_b;
-        $this->eguna=$eguna;
         $this->ordainduta=false;
         
     }
     
     public function setPrezioa($p) {
         $this->prezioa=$p;
+    }
+    
+    public function getDesk() {
+        return $this->deskribapena;
     }
 }
 
