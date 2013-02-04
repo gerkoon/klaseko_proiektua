@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 22-01-2013 a las 14:35:38
+-- Tiempo de generación: 04-02-2013 a las 12:03:19
 -- Versión del servidor: 5.5.25a
 -- Versión de PHP: 5.4.4
 
@@ -30,21 +30,20 @@ CREATE TABLE IF NOT EXISTS `bezeroa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `izena` varchar(50) COLLATE utf8_bin NOT NULL,
   `eguna` int(11) NOT NULL,
-  `ordainduta` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=202 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=237 ;
 
 --
 -- Volcado de datos para la tabla `bezeroa`
 --
 
-INSERT INTO `bezeroa` (`id`, `izena`, `eguna`, `ordainduta`) VALUES
-(191, 'bezero1', 1, NULL),
-(192, 'bezero2', 1, NULL),
-(193, 'bezero3', 2, NULL),
-(194, 'bezero4', 2, NULL),
-(200, 'bezero00', 3, NULL),
-(201, 'bezero01', 3, NULL);
+INSERT INTO `bezeroa` (`id`, `izena`, `eguna`) VALUES
+(191, 'bezero1', 30),
+(192, 'bezero2', 31),
+(193, 'bezero3', 31),
+(194, 'bezero4', 31),
+(200, 'bezero00', 31),
+(201, 'bezero01', 1);
 
 -- --------------------------------------------------------
 
@@ -53,19 +52,18 @@ INSERT INTO `bezeroa` (`id`, `izena`, `eguna`, `ordainduta`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `eguna` (
-  `id` int(11) NOT NULL,
   `eguna` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`eguna`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `eguna`
 --
 
-INSERT INTO `eguna` (`id`, `eguna`) VALUES
-(1, 30),
-(2, 31),
-(3, 1);
+INSERT INTO `eguna` (`eguna`) VALUES
+(1),
+(30),
+(31);
 
 -- --------------------------------------------------------
 
@@ -76,8 +74,9 @@ INSERT INTO `eguna` (`id`, `eguna`) VALUES
 CREATE TABLE IF NOT EXISTS `zentrua` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `describapena` varchar(150) COLLATE utf8_bin NOT NULL,
-  `prezioa` double DEFAULT NULL,
+  `prezioa` double DEFAULT '0',
   `id_bezero` int(11) NOT NULL,
+  `ordainduta` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=508 ;
 
@@ -85,15 +84,15 @@ CREATE TABLE IF NOT EXISTS `zentrua` (
 -- Volcado de datos para la tabla `zentrua`
 --
 
-INSERT INTO `zentrua` (`id`, `describapena`, `prezioa`, `id_bezero`) VALUES
-(500, 'centro variado', NULL, 191),
-(501, '1/2 clavel rojo', NULL, 191),
-(502, '1doz larrosa gorri', NULL, 192),
-(503, 'ramito clavel', NULL, 193),
-(504, 'centro clavel blanco', NULL, 194),
-(505, 'centro variado', NULL, 200),
-(506, '1 rosa', NULL, 200),
-(507, 'centro margaritas', NULL, 201);
+INSERT INTO `zentrua` (`id`, `describapena`, `prezioa`, `id_bezero`, `ordainduta`) VALUES
+(500, 'centro variado', 0, 191, NULL),
+(501, '1/2 clavel rojo', 0, 191, NULL),
+(502, '1doz larrosa gorri', 0, 192, NULL),
+(503, 'ramito clavel', 0, 193, NULL),
+(504, 'centro clavel blanco', 0, 194, NULL),
+(505, 'centro variado', 0, 200, NULL),
+(506, '1 rosa', 0, 200, NULL),
+(507, 'centro margaritas', 0, 201, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
