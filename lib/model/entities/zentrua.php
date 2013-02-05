@@ -47,6 +47,9 @@ class zentrua {
     public function getDesk() {
         return $this->deskribapena;
     }
+    public function getPrez() {
+        return $this->prezioa;
+    }
 }
 
     

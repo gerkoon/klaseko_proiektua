@@ -25,7 +25,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
-                error_reporting(0);
+                #error_reporting(0);
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
@@ -59,6 +59,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             
                 switch ($_SESSION['zein']) {
                   
+                    ##########################  ikusi  ############################
                 case 0: $app->barrua();
                         $app->ikusi1Hasi();
                         $x= $sartu->getRepository('entities\bezeroa')->findAll();#bezeroa
@@ -81,7 +82,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->input($y->getEguna()->getEguna(), "Eguna");
                         $app->textareaHasi("Enkargatua");
                         /* for bat juen bide hamen*/
-                        
+                        $prezio=0;
                         $zen=$sartu->getRepository('entities\zentrua')->findBy(array('id_bezero'=>$aukIzen));
                         for($j=0;$j<count($zen);$j++){
                             $zDesk = $zen[$j];
@@ -89,11 +90,19 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         }
                         /* honarte */
                         $app->textareaBukatu();
-                        $app->input(31, "Prezioa");
+                        
+                        for($p=0;$p<count($zen);$p++){
+                            $pr=$zen[$p];
+                            $prezio=$prezio+$pr->getPrez();
+                        }
+                        
+                        $app->input($prezio, "Prezioa");
                         $app->articleBukatu();
 
                         
                       break;
+                      
+                      ##########################  alta sartu  ############################
                 case 1: $app->barrua();
                         $app->formHasi("altaForm","#");
                         $app->inputHuts("Izena");
@@ -149,7 +158,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                 
                                 
                             }
-                            $app->button("Zentruen deskribapena sartu","get","formZentruAlta","#","ZentruSartu");
+                            
+                            $app->button("Sartu alta","get","formZentruAlta","#","ZentruSartu");
                             $app->formBukatu();
                             $app->articleBukatu();
                         }
@@ -157,9 +167,6 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                 $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["id"]));
                                 for($j=0;$j<$_SESSION["zenbat"];$j++){
                                     $desk="d".$j;
-                                    echo "$_GET[$desk]";
-                                    echo "<br />";
-                                    echo $_SESSION["id"];
                                     
                                     $zen=new entities\zentrua($_GET[$desk],$norentzat);
                                     $sartu->persist($zen);
@@ -168,7 +175,30 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             }
                         
                       break;
-                case 2: echo "decoracion/Deco02.jpg";
+                      
+                      ##########################  prezioa sartu  ############################
+                case 2: $app->barrua();
+                        
+                        /* if bat joan behar da $_session badagoen jakiteko?
+                        $aukIzen=$_SESSION['id'];
+                        $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
+                        $app->input($y->getIzena(), "Izena");*/
+                    
+                        $app->input("bezeroaren izena", "Izena");
+                        
+                        /* for bat juen bide hamen
+                        for($i=0;$i<count(zenbat zentru bezeroak, aldagaia sortu behar da);$i++)*/
+                        
+                        $app->textareaHasi('$i'.". zentrua");
+                        $app->textareaDatuak("ZENTRUAREN DESKRIBAPENA, aldagai batetik hartu behar da");
+                        $app->textareaBukatu();
+                        $app->inputHuts("Prezioa");
+                        
+                        /*<hr> bat??
+                        * for -a hemen bukatzen da!!!!!!!!!!!!!!!*/
+                        
+                        
+                        /*botoie!!!!!!!!*/
                       break;
                 case 3: echo "Flores/Flores02.jpg";
                       break;
