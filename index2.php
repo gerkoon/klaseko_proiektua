@@ -81,10 +81,12 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->input($y->getEguna()->getEguna(), "Eguna");
                         $app->textareaHasi("Enkargatua");
                         /* for bat juen bide hamen*/
-                        $app->textareaDatuak("$aukIzen");
-                        $app->textareaDatuak("bi");
-                        $app->textareaDatuak("bat");
-                        $app->textareaDatuak("bi");
+                        
+                        $zen=$sartu->getRepository('entities\zentrua')->findBy(array('id_bezero'=>$aukIzen));
+                        for($j=0;$j<count($zen);$j++){
+                            $zDesk = $zen[$j];
+                            $app->textareaDatuak($zDesk->getDesk());
+                        }
                         /* honarte */
                         $app->textareaBukatu();
                         $app->input(31, "Prezioa");
