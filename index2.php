@@ -25,7 +25,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
-                
+                error_reporting(0);
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
@@ -56,7 +56,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
             if (isset($_GET['lot'])){
             $_SESSION['zein']=$_GET['lot'];
             }
-            #error_reporting(0);
+            
                 switch ($_SESSION['zein']) {
                   
                 case 0: $app->barrua();
@@ -155,6 +155,10 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                 $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["id"]));
                                 for($j=0;$j<$_SESSION["zenbat"];$j++){
                                     $desk="d".$j;
+                                    echo "$_GET[$desk]";
+                                    echo "<br />";
+                                    echo $_SESSION["id"];
+                                    
                                     $zen=new entities\zentrua($_GET[$desk],$norentzat);
                                     $sartu->persist($zen);
                                     $sartu->flush();
