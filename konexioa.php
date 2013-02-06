@@ -16,9 +16,9 @@ error_reporting(0);
 try {
                 $sartu->getRepository('entities\eguna')->findAll();
                 } catch (Exception $exc) {
-                require_once "index.php";
+                header('Location: index.php'); 
                 }
-require_once "index2.php";
+header('Location: index2.php'); 
 
 
 ?>

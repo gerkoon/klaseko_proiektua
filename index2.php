@@ -25,11 +25,12 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
-                #error_reporting(0);
+                error_reporting(0);
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
                 $_SESSION["id"];
+                $_SESSION["bezIzena"];
                 $_SESSION["zenbat"];
                 $sartu = entityManagerFactory::createEntityManager($ddbb,$izena,$pass);
                 
@@ -75,7 +76,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $aukIzen=$_GET['bezIzen'];
                         $_SESSION["id"]=$aukIzen;
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
-                        
+                        $_SESSION["bezIzena"]=$y->getIzena();
                         $app->articleBigarrena();
                         $app->input($y->getId(), "Zenbakia");
                         $app->input($y->getIzena(), "Izena");
@@ -137,7 +138,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         
                         #zentruak sartu!!!!!!!!!!!!!!!!!!!!!!!!!!
                         if($_GET['Izena']!=""){
-                            $_SESSION["id"]=$_GET['Izena'];
+                            $_SESSION["bezIzena"]=$_GET['Izena'];
                             $_SESSION["zenbat"]=$_GET['zenAlta'];
                             $e=$sartu->getRepository('entities\eguna')->findOneBy(array('eguna' => $_GET['egAlta']));
                             
@@ -164,7 +165,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             $app->articleBukatu();
                         }
                             if(isset($_GET['ZentruSartu'])){
-                                $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["id"]));
+                                $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["bezIzena"]));
                                 for($j=0;$j<$_SESSION["zenbat"];$j++){
                                     $desk="d".$j;
                                     
@@ -184,7 +185,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
                         $app->input($y->getIzena(), "Izena");*/
                     
-                        $app->input("bezeroaren izena", "Izena");
+                        $app->input($_SESSION["bezIzena"], "Izena");
                         
                         /* for bat juen bide hamen
                         for($i=0;$i<count(zenbat zentru bezeroak, aldagaia sortu behar da);$i++)*/
