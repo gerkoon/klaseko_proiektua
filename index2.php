@@ -179,22 +179,23 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                       
                       ##########################  prezioa sartu  ############################
                 case 2: $app->barrua();
-                        
-                        /* if bat joan behar da $_session badagoen jakiteko?
-                        $aukIzen=$_SESSION['id'];
-                        $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
-                        $app->input($y->getIzena(), "Izena");*/
+                        if ($_SESSION["bezIzena"]!=""){
                     
-                        $app->input($_SESSION["bezIzena"], "Izena");
+                    
+                            $app->input($_SESSION["bezIzena"], "Izena");
                         
                         /* for bat juen bide hamen
                         for($i=0;$i<count(zenbat zentru bezeroak, aldagaia sortu behar da);$i++)*/
-                        
-                        $app->textareaHasi('$i'.". zentrua");
-                        $app->textareaDatuak("ZENTRUAREN DESKRIBAPENA, aldagai batetik hartu behar da");
-                        $app->textareaBukatu();
-                        $app->inputHuts("Prezioa");
-                        
+
+                            $app->textareaHasi('$i'.". zentrua");
+                            $app->textareaDatuak("ZENTRUAREN DESKRIBAPENA, aldagai batetik hartu behar da");
+                            $app->textareaBukatu();
+                            $app->inputHuts("Prezioa");
+                            }
+                            
+                        else
+                            /* errore panel bat falta da hemen echorik ez egoteko programa printzipalean!!!!  */
+                            echo "ez duzu bezerorik aukeratu";
                         /*<hr> bat??
                         * for -a hemen bukatzen da!!!!!!!!!!!!!!!*/
                         
