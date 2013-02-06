@@ -24,7 +24,7 @@ class bezeroa {
     private $eguna;
     
     
-    /**@OneToMany (tergetEntity="zentrua", mappedBy="id_bezero")*/
+    /**@OneToMany (targetEntity="zentrua", mappedBy="id_bezero")*/
     private $zentruak;
     public function __construct($iz,$eg){
         
