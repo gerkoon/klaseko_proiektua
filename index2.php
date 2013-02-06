@@ -164,6 +164,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             $app->formBukatu();
                             $app->articleBukatu();
                         }
+                        
+                        /*########### BOTOIARI SAKATZEAN ###########*/
                             if(isset($_GET['ZentruSartu'])){
                                 $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["bezIzena"]));
                                 for($j=0;$j<$_SESSION["zenbat"];$j++){
@@ -184,21 +186,47 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                     
                             $app->input($_SESSION["bezIzena"], "Izena");
                         
-                        /* for bat juen bide hamen
-                        for($i=0;$i<count(zenbat zentru bezeroak, aldagaia sortu behar da);$i++)*/
-
-                            $app->textareaHasi('$i'.". zentrua");
-                            $app->textareaDatuak("ZENTRUAREN DESKRIBAPENA, aldagai batetik hartu behar da");
-                            $app->textareaBukatu();
-                            $app->inputHuts("Prezioa");
+                            $app->formHasi("formPrezioa", "get");
+                            $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["bezIzena"]));
+                            $id=$y->getId();
+                            $x=$sartu->getRepository('entities\zentrua')->findBy(array('id_bezero' => "$id()"));
+                            
+                            for($z=0;$z<  count($x);$z++){
+                                $zz= $z+1;
+                                $zDesk = $x[$z];
+                                $app->textareaHasi("$zz. zentrua");
+                                $app->textareaDatuak($zDesk->getDesk());
+                                $app->textareaBukatu();
+                                $bal="d".$z;
+                                $app->inputHutsBal("Prezioa",$bal);
+                                
                             }
+                            $app->button("Sartu Prezioak","get","formPrezioa","#","sartuBotoia");
+                            $app->formBukatu();
+                            }
+                            
+                            /* ##############  BOTOIARI SAKATZEAN ############### */
+                            
                             
                         else
                             /* errore panel bat falta da hemen echorik ez egoteko programa printzipalean!!!!  */
                             echo "ez duzu bezerorik aukeratu";
                         /*<hr> bat??
                         * for -a hemen bukatzen da!!!!!!!!!!!!!!!*/
-                        
+                        if(isset($_GET['sartuBotoia'])){
+                                /*for bat beste baten barruen ein biher da
+                                 * erabiltzailiek dakozen zentruek jakitzeko
+                                 */
+                                for($j=0;$j<count($x);$j++){
+                                    $zentrua=$x[$j];
+                                    $zenPrez="d".$j;
+                                    
+                                    $zentrua->setPrezioa($_GET[$zenPrez]);
+                                    
+                                    $sartu->persist($zentrua);
+                                    $sartu->flush();
+                                }
+                            }
                         
                         /*botoie!!!!!!!!*/
                       break;

@@ -18,7 +18,7 @@ class zentrua {
     /** @Column(type="string", name="deskribapena", length=150)**/
     private $deskribapena;
     
-    /** @Column(type="integer")**/
+    /** @Column(type="decimal")**/
     private $prezioa;
     
     /** @ManyToOne(targetEntity="bezeroa", inversedBy="zentruak")
@@ -49,6 +49,9 @@ class zentrua {
     }
     public function getPrez() {
         return $this->prezioa;
+    }
+    public function getId() {
+        return $this->id;
     }
 }
 

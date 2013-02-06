@@ -72,10 +72,21 @@ class appBistak {
                     <input name='$izena'>";
                 
     }
+    public function inputHutsBal($izena,$bal) {
+               echo "<label>".$izena."</label>
+                    <input  name='$bal'>";
+                
+    }
     
     public function textareaHasi($izena) {
                echo "<label>".$izena."</label>
                     <textarea readonly >";
+                
+    }
+    
+    public function textareaHasiBal($izena,$bal) {
+               echo "<label>".$izena."</label>
+                    <textarea name='$bal' readonly >";
                 
     }
     
@@ -85,6 +96,7 @@ class appBistak {
                 
     }
     
+        
     public function textareaDatuak($datua){
         $era=$datua."\n ";
         echo $era;
