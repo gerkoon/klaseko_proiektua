@@ -15,10 +15,10 @@ class zentrua {
     /** @Id @GeneratedValue(strategy="AUTO") @Column(type="integer") **/
     private $id;
     
-    /** @Column(type="text" name="deskribapena" length="150")**/
+    /** @Column(type="string", name="deskribapena", length=150)**/
     private $deskribapena;
     
-    /** @Column(type="integer")**/
+    /** @Column(type="decimal")**/
     private $prezioa;
     
     /** @ManyToOne(targetEntity="bezeroa", inversedBy="zentruak")
@@ -27,15 +27,13 @@ class zentrua {
     private $id_bezero;
     
     
-    
-    /** @Column(type="boolean")**/
-    private $ordainduta;
 
     
     public function __construct($desk,$id_b){
         $this->deskribapena=$desk;
         $this->id_bezero=$id_b;
-        $this->ordainduta=false;
+        
+        $this->prezioa=0;
         
     }
     
@@ -45,6 +43,12 @@ class zentrua {
     
     public function getDesk() {
         return $this->deskribapena;
+    }
+    public function getPrez() {
+        return $this->prezioa;
+    }
+    public function getId() {
+        return $this->id;
     }
 }
 

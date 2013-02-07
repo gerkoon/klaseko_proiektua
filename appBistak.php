@@ -72,10 +72,21 @@ class appBistak {
                     <input name='$izena'>";
                 
     }
+    public function inputHutsBal($izena,$bal) {
+               echo "<label>".$izena."</label>
+                    <input  name='$bal'>";
+                
+    }
     
     public function textareaHasi($izena) {
                echo "<label>".$izena."</label>
                     <textarea readonly >";
+                
+    }
+    
+    public function textareaHasiBal($izena,$bal) {
+               echo "<label>".$izena."</label>
+                    <textarea name='$bal' readonly >";
                 
     }
     
@@ -85,6 +96,7 @@ class appBistak {
                 
     }
     
+        
     public function textareaDatuak($datua){
         $era=$datua."\n ";
         echo $era;
@@ -100,6 +112,11 @@ class appBistak {
     
     public function button($testua,$met,$form,$act,$izena){
         echo "<button value='$izena' name='$izena' type='submit' form='$form' formaction='$act' formmethod='$met'>".$testua."</button>";
+    }
+    
+    public function radio($iz,$bal,$label,$testua) {
+        echo "<label>$label</label>
+            <input class='radio' type='radio' name='$iz' value='$bal'>$testua";
     }
 
 }
