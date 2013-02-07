@@ -280,6 +280,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             $y->setOrdainduta(TRUE);
                             $sartu->persist($y);
                             $sartu->flush();
+                            header('Location: index2.php?lot=3'); 
                         }
                         
                         $app->articleBukatu();
