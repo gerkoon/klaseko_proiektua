@@ -25,7 +25,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
-                error_reporting(0);
+                #error_reporting(0);
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
@@ -268,11 +268,19 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         
                         $app->input($prezio, "Prezioa");
                         
-                        $app->formHasi("formOrdaindu", "get");
+                        $app->formHasi("formOrdaindu", "POST");
                         
-                        $app->radio("ord","ordaindu","ordainduta?","Bai");
+                        $app->radio("ord","TRUE","ordainduta?","");
+                        
+                        $app->button("Bai","POST","formOrdaindu","#","ordBotoia");
                         
                         $app->formBukatu();
+                        
+                        if(isset($_POST['ord'])){
+                            $y->setOrdainduta(TRUE);
+                            $sartu->persist($y);
+                            $sartu->flush();
+                        }
                         
                         $app->articleBukatu();
 
