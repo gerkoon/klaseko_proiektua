@@ -192,3 +192,8 @@ h3#lorak:hover{
     background: url("../irudiak/lorak_hover.png") no-repeat top left;
     width: 100px;
 }
+
+.radio{
+    display: inline;
+    width: 40px;
+}

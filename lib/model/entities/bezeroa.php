@@ -23,6 +23,8 @@ class bezeroa {
      */
     private $eguna;
     
+    /** @Column(type="boolean")**/
+    private $ordainduta;
     
     /**@OneToMany (targetEntity="zentrua", mappedBy="id_bezero")*/
     private $zentruak;
@@ -30,6 +32,7 @@ class bezeroa {
         
         $this->izena=$iz;
         $this->eguna=$eg;
+        $this->ordainduta=false;
         $this->zentruak=new \Doctrine\Common\Collections\ArrayCollection();
     }
     
@@ -48,6 +51,11 @@ class bezeroa {
     public function getEguna(){
         return $this->eguna;
     }
+    
+    public function setOrdainduta($p) {
+        $this->ordainduta=$p;
+    }
+    
 }
 
     

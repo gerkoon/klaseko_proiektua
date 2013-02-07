@@ -230,7 +230,53 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         
                         /*botoie!!!!!!!!*/
                       break;
-                case 3: echo "Flores/Flores02.jpg";
+                case 3: $app->barrua();
+                        $app->ikusi1Hasi();
+                        $x= $sartu->getRepository('entities\bezeroa')->findBy(array('ordainduta'=>"false"));#bezeroa
+                        for ($k=0;$k<count($x);$k++){
+                            $bIzen=$x[$k];
+                            $app->option($bIzen ->getId(),$bIzen ->getIzena());
+                        }
+                        
+                        $app->ikusi1Bukatu();
+                        $app->formBukatu();
+                        #Bezeroaren eguna
+                        
+                        $aukIzen=$_GET['bezIzen'];
+                        $_SESSION["id"]=$aukIzen;
+                        $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
+                        $_SESSION["bezIzena"]=$y->getIzena();
+                        $app->articleBigarrena();
+                        $app->input($y->getId(), "Zenbakia");
+                        $app->input($y->getIzena(), "Izena");
+                        $app->input($y->getEguna()->getEguna(), "Eguna");
+                        $app->textareaHasi("Enkargatua");
+                        /* for bat juen bide hamen*/
+                        $prezio=0;
+                        $zen=$sartu->getRepository('entities\zentrua')->findBy(array('id_bezero'=>$aukIzen));
+                        for($j=0;$j<count($zen);$j++){
+                            $zDesk = $zen[$j];
+                            $app->textareaDatuak($zDesk->getDesk());
+                        }
+                        /* honarte */
+                        $app->textareaBukatu();
+                        
+                        for($p=0;$p<count($zen);$p++){
+                            $pr=$zen[$p];
+                            $prezio=$prezio+$pr->getPrez();
+                        }
+                        
+                        $app->input($prezio, "Prezioa");
+                        
+                        $app->formHasi("formOrdaindu", "get");
+                        
+                        $app->radio("ord","ordaindu","ordainduta?","Bai");
+                        
+                        $app->formBukatu();
+                        
+                        $app->articleBukatu();
+
+                        
                       break;
                 case 4:
                     break;

@@ -27,15 +27,12 @@ class zentrua {
     private $id_bezero;
     
     
-    
-    /** @Column(type="boolean")**/
-    private $ordainduta;
 
     
     public function __construct($desk,$id_b){
         $this->deskribapena=$desk;
         $this->id_bezero=$id_b;
-        $this->ordainduta=false;
+        
         $this->prezioa=0;
         
     }
