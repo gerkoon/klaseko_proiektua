@@ -15,11 +15,11 @@ namespace entities;
 class eguna {
     /** @Id @Column(type="integer") **/
     private $eguna;
-    /**@OneToMany (tergetEntity="zentrua", mappedBy="eguna")*/
-    private $zentruak;
+    /**@OneToMany (tergetEntity="Bezeroa", mappedBy="eguna")*/
+    private $bezeroak;
     public function __construct($x){
         $this->eguna=$x;
-        $this->zentruak=new \Doctrine\Common\Collections\ArrayCollection();
+        $this->bezeroak=new \Doctrine\Common\Collections\ArrayCollection();
     }
 
 
@@ -27,8 +27,8 @@ class eguna {
         return $this->eguna;
     }
     
-    public function setZentrua($z){
-        $this->zentruak[]=$z;
+    public function setBezeroak($z){
+        $this->bezeroak[]=$z;
     }
 }
 

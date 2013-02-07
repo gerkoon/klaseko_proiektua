@@ -44,7 +44,7 @@ class appBistak {
             </article>";
 }
 
-    public function ikusi2Hasi(){
+    public function articleBigarrena(){
         echo "<article id='bigarrena' class='barrua'>";
         
     }
@@ -79,6 +79,12 @@ class appBistak {
                 
     }
     
+    public function textareaHasiDesk($izena,$deskIzen) {
+               echo "<label>".$izena."</label>
+                    <textarea name='$deskIzen' requiered>";
+                
+    }
+    
     public function textareaDatuak($datua){
         $era=$datua."\n ";
         echo $era;
@@ -90,6 +96,10 @@ class appBistak {
     
     public function label($izena) {
         echo "<label>".$izena."</label>";
+    }
+    
+    public function button($testua,$met,$form,$act,$izena){
+        echo "<button value='$izena' name='$izena' type='submit' form='$form' formaction='$act' formmethod='$met'>".$testua."</button>";
     }
 
 }

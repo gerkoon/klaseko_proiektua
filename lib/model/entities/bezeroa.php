@@ -26,10 +26,10 @@ class bezeroa {
     
     /**@OneToMany (tergetEntity="zentrua", mappedBy="id_bezero")*/
     private $zentruak;
-    public function __construct($id,$iz){
-        $this->id=$id;
-        $this->izena=$iz;
+    public function __construct($iz,$eg){
         
+        $this->izena=$iz;
+        $this->eguna=$eg;
         $this->zentruak=new \Doctrine\Common\Collections\ArrayCollection();
     }
     
