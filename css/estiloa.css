@@ -59,7 +59,7 @@ body{
 /*----------------------------  CONTENT  ------------------------------------*/
 
 #content{
-    height: 1000px;
+    
     overflow: hidden;
 }
 
@@ -119,7 +119,7 @@ textarea{
 
 footer{
     background: #666666;
-    height: 1000px;
+    height: 350px;
     
 }
 

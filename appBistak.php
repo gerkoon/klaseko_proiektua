@@ -16,7 +16,7 @@ class appBistak {
     }
     
     public function ikusi1Hasi(){
-        echo "<form id='ikusiForm'>
+        echo "<form id='ikusiForm' method='post'>
                 <select id='bezIzen' name='bezIzen'>";
         
     }

@@ -25,7 +25,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                 include_once 'lib/orm/EntityManagerFactory.php';
                 include_once 'menuakBista.php';
                 include_once 'appBistak.php';
-                #error_reporting(0);
+                error_reporting(0);
                 $izena=$_SESSION["izena"];
                 $pass=$_SESSION["pass"];
                 $ddbb=$_SESSION["ddbb"];
@@ -73,7 +73,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->formBukatu();
                         #Bezeroaren eguna
                         
-                        $aukIzen=$_GET['bezIzen'];
+                        if (isset($_POST['bezIzen'])){
+                        $aukIzen=$_POST['bezIzen'];
                         $_SESSION["id"]=$aukIzen;
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
                         $_SESSION["bezIzena"]=$y->getIzena();
@@ -100,7 +101,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->input($prezio, "Prezioa");
                         $app->articleBukatu();
 
-                        
+                        }
                       break;
                       
                       ##########################  alta sartu  ############################
@@ -133,16 +134,16 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                              
                         $app->formBukatu();
                         
-                        $app->button("Alta hasi","get","altaForm","#","altaHasi");
+                        $app->button("Alta hasi","POST","altaForm","#","altaHasi");
                         
                         
                         #zentruak sartu!!!!!!!!!!!!!!!!!!!!!!!!!!
-                        if($_GET['Izena']!=""){
-                            $_SESSION["bezIzena"]=$_GET['Izena'];
-                            $_SESSION["zenbat"]=$_GET['zenAlta'];
-                            $e=$sartu->getRepository('entities\eguna')->findOneBy(array('eguna' => $_GET['egAlta']));
+                        if($_POST['Izena']!=""){
+                            $_SESSION["bezIzena"]=$_POST['Izena'];
+                            $_SESSION["zenbat"]=$_POST['zenAlta'];
+                            $e=$sartu->getRepository('entities\eguna')->findOneBy(array('eguna' => $_POST['egAlta']));
                             
-                            $bez=new entities\bezeroa($_GET['Izena'],$e);
+                            $bez=new entities\bezeroa($_POST['Izena'],$e);
                             $sartu->persist($bez);
                             $sartu->flush();
                             
@@ -150,9 +151,9 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             
                             $app->articleBigarrena();
                             
-                            $app->formHasi("formZentruAlta", "get");
+                            $app->formHasi("formZentruAlta", "POST");
                                                        
-                            for($z=0;$z<$_GET['zenAlta'];$z++){
+                            for($z=0;$z<$_POST['zenAlta'];$z++){
                                 $zz= $z+1;
                                 $app->textareaHasiDesk("$zz. zentrua","d$z");
                                 $app->textareaBukatu();
@@ -160,18 +161,18 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                 
                             }
                             
-                            $app->button("Sartu alta","get","formZentruAlta","#","ZentruSartu");
+                            $app->button("Sartu alta","POST","formZentruAlta","#","ZentruSartu");
                             $app->formBukatu();
                             $app->articleBukatu();
                         }
                         
                         /*########### BOTOIARI SAKATZEAN ###########*/
-                            if(isset($_GET['ZentruSartu'])){
+                            if(isset($_POST['ZentruSartu'])){
                                 $norentzat=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["bezIzena"]));
                                 for($j=0;$j<$_SESSION["zenbat"];$j++){
                                     $desk="d".$j;
                                     
-                                    $zen=new entities\zentrua($_GET[$desk],$norentzat);
+                                    $zen=new entities\zentrua($_POST[$desk],$norentzat);
                                     $sartu->persist($zen);
                                     $sartu->flush();
                                 }
@@ -186,7 +187,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                     
                             $app->input($_SESSION["bezIzena"], "Izena");
                         
-                            $app->formHasi("formPrezioa", "get");
+                            $app->formHasi("formPrezioa", "POST");
                             $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('izena' => $_SESSION["bezIzena"]));
                             $id=$y->getId();
                             $x=$sartu->getRepository('entities\zentrua')->findBy(array('id_bezero' => "$id()"));
@@ -201,7 +202,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                 $app->inputHutsBal("Prezioa",$bal);
                                 
                             }
-                            $app->button("Sartu Prezioak","get","formPrezioa","#","sartuBotoia");
+                            $app->button("Sartu Prezioak","POST","formPrezioa","#","sartuBotoia");
                             $app->formBukatu();
                             }
                             
@@ -213,7 +214,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                             echo "ez duzu bezerorik aukeratu";
                         /*<hr> bat??
                         * for -a hemen bukatzen da!!!!!!!!!!!!!!!*/
-                        if(isset($_GET['sartuBotoia'])){
+                        if(isset($_POST['sartuBotoia'])){
                                 /*for bat beste baten barruen ein biher da
                                  * erabiltzailiek dakozen zentruek jakitzeko
                                  */
@@ -221,10 +222,11 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                                     $zentrua=$x[$j];
                                     $zenPrez="d".$j;
                                     
-                                    $zentrua->setPrezioa($_GET[$zenPrez]);
+                                    $zentrua->setPrezioa($_POST[$zenPrez]);
                                     
                                     $sartu->persist($zentrua);
                                     $sartu->flush();
+                                    header('Location: index2.php?lot=0');
                                 }
                             }
                         
@@ -242,7 +244,8 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         $app->formBukatu();
                         #Bezeroaren eguna
                         
-                        $aukIzen=$_GET['bezIzen'];
+                        if (isset($_POST['bezIzen'])){
+                        $aukIzen=$_POST['bezIzen'];
                         $_SESSION["id"]=$aukIzen;
                         $y=$sartu->getRepository('entities\bezeroa')->findOneBy(array('id' => $aukIzen));
                         $_SESSION["bezIzena"]=$y->getIzena();
@@ -284,7 +287,7 @@ Errepositorioa: git://github.com/gerkoon/klaseko_proiektua.git
                         }
                         
                         $app->articleBukatu();
-
+                        }
                         
                       break;
                 case 4:
