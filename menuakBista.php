@@ -16,7 +16,7 @@ class bistak {
     } 
 
     public function bistaratuMenua($m,$i) {
-        echo "<li><a href='index2.php?lot=".$i."'>";
+        echo "<li class='m$i'><a href='index2.php?lot=".$i."'>";
         echo $m;
         echo "</a></li>";
     }

@@ -49,6 +49,10 @@ body{
 }
 #menu ul li a{
     color: #CCCCCC;
+    padding-bottom: 8px;
+    padding-left: 40px;
+    padding-top: 8px;
+    
  }
  
  #menu ul li:hover{
@@ -56,15 +60,29 @@ body{
     color: #CCCCCC;
  }
 
+ .m0 a{
+     background: url("../irudiak/ikusi.png") no-repeat center left;
+ }
+ .m1 a{
+     background: url("../irudiak/alta.png") no-repeat center left;
+ }
+ .m2 a{
+     background: url("../irudiak/prezioa.png") no-repeat center left;
+ }
+ .m3 a{
+     background: url("../irudiak/nortzuk.png") no-repeat center left;
+ }
 /*----------------------------  CONTENT  ------------------------------------*/
 
 #content{
     
     overflow: hidden;
+    background: url("../irudiak/bgPattern.png") repeat top left;
 }
 
 #osoa{
-    box-shadow: 0 0 32px #E0D01A;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 50px #000;
     margin: 100px auto;
     padding: 1px;
     text-align: center;
@@ -72,7 +90,8 @@ body{
 }
 
 #osoa2{
-    box-shadow: 0 0 32px #E0D01A;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 50px #000;
     margin: 100px auto;
     padding: 1px;
     width: 750px;
